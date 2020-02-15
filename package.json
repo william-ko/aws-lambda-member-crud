@@ -1,0 +1,11 @@
+{
+  "name": "member-service",
+  "version": "1.0.0",
+  "description": "Service for user/member CRUD",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "William Kontos",
+  "license": "ISC"
+}
