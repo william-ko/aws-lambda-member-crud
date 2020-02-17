@@ -1,23 +1,12 @@
 'use strict';
 
 const {get, isEmpty} = require('lodash');
-const {validateBody, createRandomMember} = require('./utils');
+const {validateBody, createRandomMember, buildMemberObject} = require('./utils');
 
 const AWS = require('aws-sdk');
-const uuid = require('uuid/v4');
 const db = new AWS.DynamoDB.DocumentClient({apiVersion: '2012-08-10'});
 
 module.exports.create = async (event, context, callback) => {
-  const buildMemberObject = data => {
-    const member = {
-      id: uuid(),
-      createdAt: new Date().toISOString(),
-      ...data,
-    };
-
-    return member;
-  };
-
   let member;
   const body = JSON.parse(get(event, 'body'));
 
