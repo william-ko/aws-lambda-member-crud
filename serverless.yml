@@ -1,4 +1,3 @@
-org: williamko
 service: members-api
 
 frameworkVersion: ">=1.1.0 <2.0.0"
@@ -27,39 +26,39 @@ provider:
 
 functions:
   createMember:
-    handler: api/member.create
+    handler: api/handlers/create.handler
     description: Creates a new member.
     events:
       - http: 
-          path: /member
+          path: member
           method: post
-  getAllMembers:
-    handler: api/member.getAllMembers
+  listMembers:
+    handler: api/handlers/list.handler
     description: Gets all members.
     events:
       - http: 
-          path: /members
+          path: members
           method: get
   getMember:
-    handler: api/member.getMember
+    handler: api/handlers/read.handler
     description: Gets a member by id.
     events:
       - http: 
-          path: /member/{id}
+          path: member/{id}
           method: get
   updateMember:
-    handler: api/member.updateMember
+    handler: api/handlers/update.handler
     description: Gets and updates a member by id.
     events:
       - http: 
-          path: /member/{id}
+          path: member/{id}
           method: put
   deleteMember:
-    handler: api/member.deleteMember
+    handler: api/handlers/delete.handler
     description: Deletes a member by id.
     events:
       - http: 
-          path: /member/{id}
+          path: member/{id}
           method: delete
 
 resources:

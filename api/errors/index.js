@@ -1,3 +1,5 @@
+'use strict';
+
 class DomainError extends Error {
   constructor(message) {
     super(message);
@@ -39,16 +41,8 @@ class UnproccessableEntityError extends DomainError {
   }
 }
 
-class InternalError extends DomainError {
-  constructor(error) {
-    super(error.message);
-    this.data = {error};
-  }
-}
-
 module.exports = {
   UnproccessableEntityError,
   ResourceNotFoundError,
   BadRequestError,
-  InternalError,
 };

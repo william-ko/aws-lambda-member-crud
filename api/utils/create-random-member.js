@@ -1,3 +1,5 @@
+'use strict';
+
 const RandomUserService = require('../services');
 const userService = new RandomUserService({baseUrl: 'https://randomuser.me'});
 
