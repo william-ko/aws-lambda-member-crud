@@ -7,10 +7,11 @@ class DomainError extends Error {
 }
 
 class ResourceNotFoundError extends DomainError {
-  constructor(resource) {
-    super(`Resource ${resource} was not found.`);
+  constructor(error) {
+    super(error.message);
     this.data = {
       code: 404,
+      message: error.message,
       diagnostic: 'Resource Not Found',
     };
   }

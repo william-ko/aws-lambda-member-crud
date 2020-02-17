@@ -26,14 +26,41 @@ provider:
         - arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.settings.MEMBERS_TABLE}
 
 functions:
-  memberCreation:
+  createMember:
     handler: api/member.create
-    memorySize: 128
     description: Creates a new member.
     events:
       - http: 
           path: /member
           method: post
+  getAllMembers:
+    handler: api/member.getAllMembers
+    description: Gets all members.
+    events:
+      - http: 
+          path: /members
+          method: get
+  getMember:
+    handler: api/member.getMember
+    description: Gets a member by id.
+    events:
+      - http: 
+          path: /member/{id}
+          method: get
+  updateMember:
+    handler: api/member.updateMember
+    description: Gets and updates a member by id.
+    events:
+      - http: 
+          path: /member/{id}
+          method: put
+  deleteMember:
+    handler: api/member.deleteMember
+    description: Deletes a member by id.
+    events:
+      - http: 
+          path: /member/{id}
+          method: delete
 
 resources:
   Resources:
