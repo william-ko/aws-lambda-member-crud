@@ -1,11 +1,20 @@
 {
-  "name": "member-service",
+  "name": "members-api",
   "version": "1.0.0",
   "description": "Service for user/member CRUD",
   "main": "handler.js",
   "scripts": {
+    "fix:prettier": "prettier --write \"**/*.js\"",
     "test": "jest"
   },
   "author": "William Kontos",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.619.0",
+    "axios": "^0.19.2",
+    "email-validator": "^2.0.4",
+    "lodash": "^4.17.15",
+    "prettier": "^1.19.1",
+    "uuid": "^3.4.0"
+  }
 }

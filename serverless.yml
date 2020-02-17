@@ -1,4 +1,5 @@
-service: member-service
+org: williamko
+service: members-api
 
 frameworkVersion: ">=1.1.0 <2.0.0"
 
@@ -8,7 +9,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs10.15
+  runtime: nodejs10.x
   stage: dev
   region: us-east-1
   environment: ${self:custom.settings}
@@ -22,7 +23,7 @@ provider:
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
       Resource: 
-        - "arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.settings.MEMBERS_TABLE}"
+        - arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.settings.MEMBERS_TABLE}
 
 functions:
   memberCreation:
