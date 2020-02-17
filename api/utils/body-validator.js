@@ -1,3 +1,5 @@
+'use strict';
+
 const {forEach, isString, size} = require('lodash');
 const {BadRequestError, UnproccessableEntityError} = require('../errors');
 

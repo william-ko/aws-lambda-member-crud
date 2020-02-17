@@ -1,3 +1,5 @@
+'use strict';
+
 const APIBase = require('./api-base');
 
 class RandomUserService extends APIBase {
