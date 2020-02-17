@@ -21,6 +21,7 @@ class BadRequestError extends DomainError {
     super(error.message);
     this.data = {
       code: 400,
+      message: error.message,
       diagnostic: 'Bad Request',
     };
   }
@@ -31,6 +32,7 @@ class UnproccessableEntityError extends DomainError {
     super(error.message);
     this.data = {
       code: 422,
+      message: error.message,
       diagnostic: 'Unproccessable Entity',
     };
   }

@@ -27,14 +27,6 @@ module.exports.create = async (event, context, callback) => {
     await db.put(params).promise();
     return {statusCode: 201, body: JSON.stringify({params})};
   } catch (error) {
-    // need to properly handle errors
-    const errorObj = {
-      requestId: context.awsRequestId,
-      code: error.code,
-      diagnostics: error.message,
-      trace: [error.stack],
-    };
-
-    callback(JSON.stringify(errorObj));
+    callback(JSON.stringify(error));
   }
 };
