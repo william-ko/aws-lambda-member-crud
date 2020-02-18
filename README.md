@@ -3,4 +3,6 @@ _<p align=center>A simple serverless CRUD API using AWS API Gateway, Lambda and 
 
 -------
 
+API documentation can be found here: https://documenter.getpostman.com/view/10412215/SzKQzLrL
+
 <div align=center><img src="./public/design-reference.svg"></div>
