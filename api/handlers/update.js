@@ -33,7 +33,7 @@ module.exports.handler = async (event, context, callback) => {
       throw new ResourceNotFoundError({message: 'Member not found'});
     }
 
-    return {statusCode: 200, body: JSON.stringify({data})};
+    return {statusCode: 200, body: JSON.stringify({data: data.Attributes})};
   } catch (error) {
     callback(JSON.stringify(error));
   }
