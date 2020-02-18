@@ -5,7 +5,7 @@
   "main": "handler.js",
   "scripts": {
     "fix:prettier": "prettier --write \"**/*.js\"",
-    "test": "jest"
+    "test": "jest --runInBand"
   },
   "author": "William Kontos",
   "license": "ISC",
