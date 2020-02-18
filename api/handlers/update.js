@@ -15,16 +15,16 @@ module.exports.handler = async (event, context, callback) => {
 
   const params = {
     Key: {
-      id
+      id,
     },
     TableName: process.env.MEMBERS_TABLE,
     ConditionExpression: 'attribute_exists(id)',
     UpdateExpression: `set ${parameterName} = :v`,
     ExpressionAttributeValues: {
-      ':v': parameterValue
+      ':v': parameterValue,
     },
-    ReturnValues: 'ALL_NEW'
-  }
+    ReturnValues: 'ALL_NEW',
+  };
 
   try {
     const data = await db('update', params);
@@ -37,4 +37,4 @@ module.exports.handler = async (event, context, callback) => {
   } catch (error) {
     callback(JSON.stringify(error));
   }
-}
+};

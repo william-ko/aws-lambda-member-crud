@@ -15,7 +15,7 @@ module.exports.handler = async (event, context, callback) => {
   };
 
   try {
-    const data = await db('get', params)
+    const data = await db('get', params);
 
     if (isEmpty(data)) {
       throw new ResourceNotFoundError({message: 'Member not found'});

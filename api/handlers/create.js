@@ -23,7 +23,7 @@ module.exports.handler = async (event, context, callback) => {
     };
 
     await db('put', params);
-    return {statusCode: 201, body: JSON.stringify({params})};
+    return {statusCode: 201, body: JSON.stringify({member: params.Item})};
   } catch (error) {
     callback(JSON.stringify(error));
   }

@@ -9,13 +9,13 @@ const validateEmail = email => {
   if (!validator.validate(email)) {
     throw new BadRequestError({message: 'Invalid email address'});
   }
-}
+};
 
 module.exports = (parameters, method) => {
   // validates request body depending on the method (POST, PUT)
   let maxValues;
   let email;
-  let validKeys;;
+  let validKeys;
 
   if (method === 'PUT') {
     validKeys = ['parameterName', 'parameterValue'];
